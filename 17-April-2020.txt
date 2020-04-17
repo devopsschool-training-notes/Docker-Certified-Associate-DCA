@@ -1,0 +1,29 @@
+MDE - https://www.devopsschool.com/blog/know-more-about-master-in-devops-engineeringmde-first-session/
+
+Docker Volume
+Docker Networking
+===========================
+13.233.229.192
+
+Containers are EMP...
+	We need persitance Storage...
+--------------------------
+Sol - Volume
+	
+
+Where can you store a data?
+	= volume  /var/lib/docker/volumes
+	= host 
+	= memory
+https://www.devopsschool.com/blog/understand-docker-volume-from-beginner-to-deep-dive-level/
+
+====================================
+Docker networking
+=====================================
+How container gets UNIQUE IP ADDS?
+==============================
+	Driver of Docker nEtworking 
+	- Bridge
+	- host
+	- none
+
