@@ -1,0 +1,140 @@
+Docker-Compose
+==============
+What is Docker-Compose?
+	Tools dev by Docker
+	For Developers
+	To automate Image Building and Testing process
+	To Save time.
+	Manage mul env in one machine
+	Changes would be happen only those which are required.
+
+What is the Problem with Docker Image Building and Testing process for Dev Team.
+===========================================================================
+
+
+What is Solution?
+=================
+docker-compose
+
+How Docker-Compose Works?
+===========================================================
+
+Human -> Docker-Compose.yaml ->Docker-Compose with command -> Will be done.
+
+What is the content of Docker-Compose.yaml?
+============================================
+	Has collections of service.
+	Each service has 6+ param
+	Serrvice can be depends on another service
+
+	Service1
+		Build = dockerfile
+		image = imagename
+		vol = volname
+		net - net name
+		env = set new env
+		ports = specify
+		dependson = another svc name.
+
+	Service2
+		Build
+		image
+		vol
+		net
+		env
+		ports
+		dependson
+
+	Service3
+		Build
+		image
+		vol
+		net
+		env
+		ports
+		dependson
+===========================================================
+https://github.com/devopsschool-sample-programs/docker-compose-examples
+		docker-compose build	
+		docker-compose up
+		docker-compose stop
+		docker-compose rm
+
+How to install Docker compose?
+13.235.104.98
+
+ 1003  sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname 
+
+-s)-$(uname -m)" -o /usr/local/bin/docker-compose
+ 1004  sudo chmod +x /usr/local/bin/docker-compose
+ 1005  sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+ 1006  docker-compose --version
+ 1007  docker-compose --help
+ 1008  history
+
+
+
+Docker-compose.yaml
+==========================
+version: '2'
+
+services:
+  wordpress:
+    image: wordpress:4.5
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    restart: always
+
+  db:
+    image: mariadb:10.1
+    volumes:
+      - "./volumes/db:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+
+Assignment - 
+https://www.devopsschool.com/tutorial/docker/labs/docker/docker-lab-6-link.html
+===========================================================
+Task - 
+Write a compose file.
+1. APP - SonarQube
+2. DB name - mySQl
+=========================
+Write a Docker-compose which would run SONARQUBE in MYSQL DB.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
